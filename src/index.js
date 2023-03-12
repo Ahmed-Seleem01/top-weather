@@ -25,6 +25,10 @@ const requestedWeatherData = (function () {
   return { asyncGetLocation };
 })();
 
+function toCelsius (kelvinTemp) {
+  const celsius = kelvinTemp -273.15;
+  return `${celsius.toFixed(2)} °C`;
+}
 
 const screenController = function screenController() {
   
@@ -49,8 +53,8 @@ const screenController = function screenController() {
     };
     console.log(usedData);
     DOMelements.container.textContent = "";
-    createInfoElement("Temperature", usedData.main.temp);
-    createInfoElement("Feels like", usedData.main.feels_like);
+    createInfoElement("Temperature", toCelsius(usedData.main.temp));
+    createInfoElement("Feels like", toCelsius(usedData.main.feels_like));
     createInfoElement("Humidity", usedData.main.humidity);
     createInfoElement("main", usedData.weather.main);
     createInfoElement("Description", usedData.weather.description);
