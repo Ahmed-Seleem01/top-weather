@@ -5,14 +5,14 @@ const DOMelements = (function () {
 
   return { container, form };
 })();
-const weatherData = (function () {
-  const createInfoElement = function (label, data) {
-    const elm = document.createElement("p");
-    elm.textContent = `${label}: ${data}`;
-    elm.classList.add("weather-data");
-    DOMelements.container.appendChild(elm);
-  };
+
   const renderWeatherData = function renderWeatherInfo(usedData) {
+    const createInfoElement = function (label, data) {
+      const elm = document.createElement("p");
+      elm.textContent = `${label}: ${data}`;
+      elm.classList.add("weather-data");
+      DOMelements.container.appendChild(elm);
+    };
     console.log(usedData);
     DOMelements.container.textContent = "";
     createInfoElement("Temperature", usedData.main.temp);
@@ -21,8 +21,6 @@ const weatherData = (function () {
     createInfoElement("main", usedData.weather.main);
     createInfoElement("Description", usedData.weather.description);
   };
-  return { renderWeatherData };
-})();
 
 const userLocation = function getLocationFromUser() {
   const location = document.querySelector("#location");
@@ -35,7 +33,7 @@ const requestedWeatherData = (function () {
       const response = await fetch(url, { mode: "cors" });
       const data = await response.json();
       const usedData = { weather: data.weather[0], main: data.main };
-      weatherData.renderWeatherData(usedData);
+      renderWeatherData(usedData);
     } catch (error) {
       console.log(error.message);
     }
