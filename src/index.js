@@ -7,25 +7,26 @@ const DOMelements = (function () {
 })();
 
 const requestedWeatherData = (function () {
-  const asyncGetLocation = async function asyncGetLocation(url) {
-      try {
-        const response = await fetch(url, { mode: "cors" });
-        const data = await response.json();
+  const asyncGetLocation = async function asyncGetLocation() {
+    try {
+      const userLocation = document.querySelector("#location").value;
+      const url = `https://api.openweathermap.org/data/2.5/weather?q=${
+        userLocation
+      }&APPID=4cd54834209720f8529a795ba5933b01`;
+      const response = await fetch(url, { mode: "cors" });
+      const data = await response.json();
       const usedData = { weather: data.weather[0], main: data.main };
-      renderWeatherData(usedData);
+      return usedData;
     } catch (error) {
       console.log(error.message);
     }
   };
-  const getLocationData = function getLocationData(e) {
+
+  const getLocationData = async function getLocationData(e) {
     e.preventDefault();
-    DOMelements.container.textContent = "";
-    const userLocation = document.querySelector("#location").value;
-    const url = `https://api.openweathermap.org/data/2.5/weather?q=${
-      userLocation
-    }&APPID=4cd54834209720f8529a795ba5933b01`;
     DOMelements.container.textContent = "waiting";
-    asyncGetLocation(url);
+    const usedData = await asyncGetLocation();
+    renderWeatherData(usedData);
   };
   return { getLocationData };
 })();
