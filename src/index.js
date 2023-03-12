@@ -10,9 +10,7 @@ const requestedWeatherData = (function () {
   const asyncGetLocation = async function asyncGetLocation() {
     try {
       const userLocation = document.querySelector("#location").value;
-      const url = `https://api.openweathermap.org/data/2.5/weather?q=${
-        userLocation
-      }&APPID=4cd54834209720f8529a795ba5933b01`;
+      const url = `https://api.openweathermap.org/data/2.5/weather?q=${userLocation}&APPID=4cd54834209720f8529a795ba5933b01`;
       const response = await fetch(url, { mode: "cors" });
       const data = await response.json();
       const usedData = { weather: data.weather[0], main: data.main };
@@ -21,22 +19,18 @@ const requestedWeatherData = (function () {
       console.log(error.message);
     }
   };
-  
+
   return { asyncGetLocation };
 })();
 
-function toCelsius (kelvinTemp) {
-  const celsius = kelvinTemp -273.15;
+function toCelsius(kelvinTemp) {
+  const celsius = kelvinTemp - 273.15;
   return `${celsius.toFixed(2)} °C`;
 }
 
 const screenController = function screenController() {
-  
-  DOMelements.form.addEventListener(
-    "submit",
-    getLocationData
-    );
-    
+  DOMelements.form.addEventListener("submit", getLocationData);
+
   async function getLocationData(e) {
     e.preventDefault();
     // Display waiting while waiting for weather data to be ready
