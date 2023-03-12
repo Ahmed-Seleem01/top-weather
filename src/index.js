@@ -55,9 +55,13 @@ const screenController = function screenController() {
     DOMelements.container.textContent = "";
     createInfoElement("Temperature", toCelsius(usedData.main.temp));
     createInfoElement("Feels like", toCelsius(usedData.main.feels_like));
-    createInfoElement("Humidity", usedData.main.humidity);
-    createInfoElement("main", usedData.weather.main);
+    createInfoElement("Humidity", `${usedData.main.humidity} %`);
     createInfoElement("Description", usedData.weather.description);
+
+    const icon = document.createElement("img");
+    icon.src = `https://openweathermap.org/img/wn/${usedData.weather.icon}@2x.png`;
+    icon.alt = "weather icon";
+    DOMelements.container.appendChild(icon);
   };
 };
 
