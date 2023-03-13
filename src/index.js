@@ -1,3 +1,5 @@
+import "normalize.css";
+import "./style.scss";
 // writer a function for getting the location
 const DOMelements = (function () {
   const container = document.querySelector(".render-data");
