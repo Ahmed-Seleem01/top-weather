@@ -4,6 +4,12 @@ flex-package{
  justify-content: center;
  align-items: center;
 }
+
+body{
+  background: linear-gradient(45deg, rgb(63, 151, 251),rgb(87, 161, 246)); 
+  color: white;
+}
+
 .container {
   @extend flex-package;
   padding: 50px;
@@ -26,6 +32,7 @@ flex-package{
 
         input{
           width: 100%;
+          border: 1px solid rgb(53, 131, 234);
           border-radius: 50px;
           padding: 10px;
           text-align: center;
@@ -37,6 +44,11 @@ flex-package{
         border: 1px solid black;
         border-radius: 40px;
         cursor: pointer;
+        background-color: #ffe4c4;
+        color: rgb(46, 46, 46);
+      }
+      button:active{
+        background-color: lightgreen;
       }
     }
   }
