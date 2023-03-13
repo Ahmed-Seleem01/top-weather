@@ -54,8 +54,14 @@ body{
   }
   .render-data{
     @extend flex-package;
+    font-size: 1.5rem;
     // border: 2px solid;
-    min-height: 200px;
+    min-height: 300px;
     min-width: 300px;
+    gap: 15px;
+    p{
+      margin: 0;
+      padding: 0;
+    }
   }
 }
