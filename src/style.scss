@@ -1,10 +1,42 @@
-.container{
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+flex-package{
+ display: flex;
+ flex-direction: column;
+ justify-content: center;
+ align-items: center;
+}
+.container {
+  @extend flex-package;
   padding: 50px;
   font-size: 1.2rem;
   margin-top: 10vh;
   border: 2px solid;
+  gap: 50px;
+
+  .get-location{
+    @extend flex-package;
+
+    form{
+      @extend flex-package;   
+      gap: 20px;
+
+      .user-input{
+        @extend flex-package;
+        align-items: flex-start;
+        gap: 5px;
+      }
+
+      button{
+        padding: 20px;
+        border: 1px solid black;
+        border-radius: 40px;
+        cursor: pointer;
+      }
+    }
+  }
+  .render-data{
+    @extend flex-package;
+    border: 2px solid;
+    min-height: 200px;
+    min-width: 300px;
+  }
 }
