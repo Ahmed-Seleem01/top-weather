@@ -14,8 +14,8 @@ body{
   @extend flex-package;
   padding: 50px;
   font-size: 1.2rem;
-  margin-top: 10vh;
-  border: 2px solid;
+  margin-top: 5vh;
+  // border: 2px solid;
   gap: 50px;
 
   .get-location{
@@ -54,7 +54,7 @@ body{
   }
   .render-data{
     @extend flex-package;
-    border: 2px solid;
+    // border: 2px solid;
     min-height: 200px;
     min-width: 300px;
   }
