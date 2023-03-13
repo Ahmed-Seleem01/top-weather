@@ -8,6 +8,13 @@ flex-package{
 body{
   background: linear-gradient(45deg, rgb(63, 151, 251),rgb(87, 161, 246)); 
   color: white;
+
+  h1{
+    text-align: center;
+    background-color: #3560a1;
+    margin: 0;
+    padding: 30px
+  }
 }
 
 .container {
