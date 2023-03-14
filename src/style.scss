@@ -62,7 +62,7 @@ body{
   .render-data{
     @extend flex-package;
     font-size: 1.5rem;
-    // border: 2px solid;
+    width: 100%;
     min-height: 300px;
     min-width: 300px;
     gap: 15px;
