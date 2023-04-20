@@ -10,22 +10,22 @@ const Background = (type) => {
   const container = document.querySelector("body");
 
   if (type.includes("clear")) {
-    container.style.background = `url(${clear})  no-repeat top fixed`;
+    container.style.background = `url(${clear})  no-repeat top fixed black`;
   }
   else if(type.includes("clouds")){
-    container.style.background = `url(${clouds})  no-repeat center fixed`;
+    container.style.background = `url(${clouds})  no-repeat center fixed black`;
   }
   else if(type.includes("rain")){
-    container.style.background = `url(${rain})  no-repeat center fixed`;
+    container.style.background = `url(${rain})  no-repeat center fixed black`;
   }
   else if(type.includes("storm")){
-    container.style.background = `url(${storm})  no-repeat center fixed`;
+    container.style.background = `url(${storm})  no-repeat center fixed black`;
   }
   else if(type.includes("snow")){
-    container.style.background = `url(${snow})  no-repeat center fixed`;
+    container.style.background = `url(${snow})  no-repeat center fixed black`;
   }
   else if(type.includes("mist")){
-    container.style.background = `url(${mist})  no-repeat top fixed`;
+    container.style.background = `url(${mist})  no-repeat top fixed black`;
   }
 };
 
