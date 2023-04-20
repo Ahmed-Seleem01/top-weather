@@ -1,5 +1,6 @@
 import "normalize.css";
 import "./style.scss";
+import Background from "./components/Background";
 // writer a function for getting the location
 const DOMelements = (function () {
   const container = document.querySelector(".render-data");
@@ -58,6 +59,9 @@ const screenController = function screenController() {
     icon.src = `https://openweathermap.org/img/wn/${usedData.weather.icon}@2x.png`;
     icon.alt = "weather icon";
     DOMelements.container.appendChild(icon);
+
+    // Change background according to weather status
+    Background(usedData.weather.description);
   };
 };
 
