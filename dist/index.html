@@ -8,11 +8,17 @@
     <title>Weather</title>
   </head>
   <body>
+    <!-- Container to hold the entire content of the page -->
     <div class="container">
+      <!-- Div to hold the form for entering location -->
       <div class="get-location">
-        <form novalidate>
+        <!-- Form element with no validation on submission -->
+        <form>
+          <!-- Div to hold the input field and label for location -->
           <div class="user-input">
+            <!-- Label for location input field -->
             <label for="location">Enter city</label>
+            <!-- Input field for location with regex pattern validation for letters only -->
             <input
               id="location"
               name="location"
@@ -21,9 +27,11 @@
               required
             />
           </div>
+          <!-- Submit button for form -->
           <button type="submit" id="submit">Get the weather info</button>
         </form>
       </div>
+      <!-- Empty div to hold the weather data that is retrieved from the API -->
       <div class="render-data"></div>
     </div>
   </body>
