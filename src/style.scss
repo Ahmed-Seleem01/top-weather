@@ -1,14 +1,25 @@
+// Defines a class 'flex-package' which will be used to apply common flex properties to elements
 flex-package{
  display: flex;
  flex-direction: column;
  justify-content: center;
  align-items: center;
 }
-
+// Applies styling to the body element
 body{
   background: linear-gradient(45deg, rgb(63, 151, 251),rgb(87, 161, 246)); 
-  color: white;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  color: rgb(233, 233, 233);
+  background-color: rgb(226, 82, 25);
+  // Blends the background color and gradient
+  background-blend-mode: color;
+  font-weight: 500;
+  transition: background 2s ease-out;
 
+  // Applies styling to h1 elements within the body
   h1{
     text-align: center;
     background-color: #3560a1;
@@ -16,27 +27,27 @@ body{
     padding: 30px
   }
 }
-
+// Defines a class 'container' which will be used to apply common properties to a container element
 .container {
+  // Inherits properties from the 'flex-package' class
   @extend flex-package;
   padding: 50px;
-  font-size: 1.2rem;
+  font-size: 1.25rem;
   margin-top: 5vh;
-  // border: 2px solid;
   gap: 50px;
 
+  // Applies styling to elements with class 'get-location' within the container
   .get-location{
     @extend flex-package;
-
+    // Applies styling to form elements within the 'get-location' class
     form{
       @extend flex-package;   
       gap: 20px;
-
+      // Applies styling to elements with class 'user-input' within the form
       .user-input{
         @extend flex-package;
-        // align-items: flex-start;
         gap: 5px;
-
+        // Applies styling to input elements within the user input
         input{
           width: 100%;
           border: 1px solid rgb(53, 131, 234);
@@ -45,7 +56,7 @@ body{
           text-align: center;
         }
       }
-
+      // Applies styling to button elements within the form
       button{
         padding: 10px;
         border: 1px solid black;
@@ -59,12 +70,13 @@ body{
       }
     }
   }
+  // Apply styling to the container that hold weather data
   .render-data{
     @extend flex-package;
     font-size: 1.3rem;
     width: 100%;
-    min-height: 300px;
     min-width: 300px;
+    min-height: 300px;
     gap: 15px;
     p{
       margin: 0;
